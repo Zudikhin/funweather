@@ -1,0 +1,22 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+input {
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+button {
+  margin: 0;
+  text-decoration: none;
+  cursor: pointer;
+  text-align: center;
+  &:focus {
+    outline: none;
+  }
+  &::-moz-focus-inner {
+    border: 0;
+  }
+}
