@@ -1,0 +1,28 @@
+$screen-sm: 576px;
+$screen-md: 768px;
+$screen-lg: 992px;
+$screen-xl: 1200px;
+
+@media screen and (min-width: $screen-sm) {
+  .container {
+    max-width: 540px;
+  }
+}
+
+@media screen and (min-width: $screen-md) {
+  .container {
+    max-width: 720px;
+  }
+}
+
+@media screen and (min-width: $screen-lg) {
+  .container {
+    max-width: 960px;
+  }
+}
+
+@media screen and (min-width: $screen-xl) {
+  .container {
+    max-width: 1140px;
+  }
+}
