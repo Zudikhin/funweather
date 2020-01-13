@@ -1,0 +1,39 @@
+.main {
+  position: relative;
+  top: $header__height;
+  background-color: $background__color;
+  &.active {
+    top: 328px;
+  }
+}
+.main__content {
+  & h2 {
+    color: white;
+    text-align: center;
+  }
+  & p {
+    color: white;
+    text-align: center;
+  }
+}
+.main__btns {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  & button {
+    width: 158px;
+    height: 54px;
+    background-color: blue;
+    border: none;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    &:last-child {
+      margin-bottom: 0px;
+    }
+    & a {
+      color: white;
+    }
+  }
+}
