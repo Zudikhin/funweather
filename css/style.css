@@ -57,10 +57,22 @@ li {
 a {
   text-decoration: none;
 }
+a:hover {
+  text-decoration: none;
+}
 
 .header {
   position: absolute;
   width: 100%;
+}
+@media screen and (min-width: 576px) {
+  .header {
+    height: 85px;
+    background-color: #648cff;
+  }
+  .header.active {
+    height: 228px;
+  }
 }
 @media screen and (min-width: 768px) {
   .header {
@@ -258,20 +270,42 @@ a {
 
 .main {
   position: relative;
-  top: 85px;
+  top: 84px;
   background-color: #648cff;
 }
 .main.active {
   top: 328px;
 }
+@media screen and (min-width: 576px) {
+  .main.active {
+    top: 228px;
+  }
+}
 
 .main__content h2 {
   color: white;
   text-align: center;
+  font-size: 30px;
+  font-family: "Ubuntu-Bold";
+}
+@media screen and (min-width: 992px) {
+  .main__content h2 {
+    font-size: 50px;
+    text-align: left;
+  }
 }
 .main__content p {
   color: white;
   text-align: center;
+  font-size: 18px;
+  font-family: "Ubuntu-Regular";
+  margin-top: 16px;
+}
+@media screen and (min-width: 992px) {
+  .main__content p {
+    font-size: 24px;
+    text-align: left;
+  }
 }
 
 .main__btns {
@@ -279,7 +313,7 @@ a {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 0 auto;
+  margin: 20px auto;
 }
 .main__btns button {
   width: 158px;
@@ -294,6 +328,153 @@ a {
 }
 .main__btns button a {
   color: white;
+  font-family: "Ubuntu-Bold";
+  font-size: 18px;
+}
+@media screen and (min-width: 768px) {
+  .main__btns {
+    flex-direction: row;
+  }
+  .main__btns button {
+    margin-bottom: 0px;
+    margin-right: 13px;
+  }
+  .main__btns button:last-child {
+    margin-right: 0px;
+  }
+}
+@media screen and (min-width: 992px) {
+  .main__btns {
+    justify-content: flex-start;
+  }
+  .main__btns button:hover {
+    background-color: #fc6a42;
+  }
+}
+
+.main__mobile {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.main__mobile span {
+  display: none;
+}
+@media screen and (min-width: 576px) {
+  .main__mobile span {
+    display: block;
+    position: absolute;
+    font-size: 18px;
+    color: white;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    font-family: "Ubuntu-Bold";
+    z-index: 1;
+    text-transform: uppercase;
+  }
+  .main__mobile span.sunny {
+    left: 5%;
+    top: 55%;
+  }
+  .main__mobile span.sunny:before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    background-color: #fc6a42;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    z-index: -1;
+  }
+  .main__mobile span.nine {
+    top: 17%;
+    right: 10%;
+    color: #6ca3ff;
+  }
+  .main__mobile span.nine:before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 58px;
+    height: 58px;
+    border-radius: 50%;
+    background-color: white;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    z-index: -1;
+  }
+  .main__mobile span.london {
+    right: -10%;
+    top: 51%;
+  }
+  .main__mobile span.london:before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    background-color: #4466c9;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    z-index: -1;
+  }
+  .main__mobile span.rio {
+    bottom: -5%;
+    right: 5%;
+    color: #648cff;
+  }
+  .main__mobile span.rio:before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    background-color: #fcec64;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    z-index: -1;
+  }
+}
+@media screen and (min-width: 768px) {
+  .main__mobile span.sunny {
+    left: 17%;
+    top: 55%;
+  }
+  .main__mobile span.nine {
+    top: 17%;
+    right: 20%;
+  }
+  .main__mobile span.london {
+    right: 5%;
+    top: 51%;
+  }
+  .main__mobile span.rio {
+    bottom: -5%;
+    right: 15%;
+  }
+}
+
+.main__wave {
+  display: none;
+}
+
+.main__down {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 24px;
 }
 
 /*# sourceMappingURL=style.css.map */

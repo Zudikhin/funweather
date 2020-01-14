@@ -1,19 +1,37 @@
 .main {
   position: relative;
-  top: $header__height;
+  top: $header__height - 1px;
   background-color: $background__color;
   &.active {
     top: 328px;
+  }
+  @include sm {
+    &.active {
+      top: 228px;
+    }
   }
 }
 .main__content {
   & h2 {
     color: white;
     text-align: center;
+    font-size: 30px;
+    font-family: "Ubuntu-Bold";
+    @include lg {
+      font-size: 50px;
+      text-align: left;
+    }
   }
   & p {
     color: white;
     text-align: center;
+    font-size: 18px;
+    font-family: 'Ubuntu-Regular';
+    margin-top: 16px;
+    @include lg {
+      font-size: 24px;
+      text-align: left;
+    }
   }
 }
 .main__btns {
@@ -21,7 +39,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 0 auto;
+  margin: 20px auto;
   & button {
     width: 158px;
     height: 54px;
@@ -34,6 +52,150 @@
     }
     & a {
       color: white;
+      font-family: "Ubuntu-Bold";
+      font-size: 18px;
     }
   }
+  @include md {
+    flex-direction: row;
+    & button {
+      margin-bottom: 0px;
+      margin-right: 13px;
+      &:last-child {
+        margin-right: 0px;
+      }
+    }
+  }
+  @include lg {
+    justify-content: flex-start;
+    & button {
+      &:hover {
+        background-color: #fc6a42;
+      }
+    }
+  }
+}
+.main__mobile {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  & span {
+    display: none;
+  }
+  @include sm {
+    & span {
+      display: block;
+      position: absolute;
+      font-size: 18px;
+      color: white;
+      -webkit-transform: translate(-50%,-50%);
+      transform: translate(-50%,-50%);
+      font-family: "Ubuntu-Bold";
+      z-index: 1;
+      text-transform: uppercase;
+      &.sunny {
+        left: 5%;
+        top: 55%;
+        &:before {
+          content: "";
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          width: 90px;
+          height: 90px;
+          border-radius: 50%;
+          background-color: #fc6a42;
+          -webkit-transform: translate(-50%,-50%);
+          transform: translate(-50%,-50%);
+          z-index: -1;
+        }
+      }
+      &.nine {
+        top: 17%;
+        right: 10%;
+        color: #6ca3ff;
+        &:before {
+          content: "";
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          width: 58px;
+          height: 58px;
+          border-radius: 50%;
+          background-color: white;
+          -webkit-transform: translate(-50%,-50%);
+          transform: translate(-50%,-50%);
+          z-index: -1;
+        }
+      }
+      &.london {
+        right: -10%;
+        top: 51%;
+        &:before {
+          content: "";
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          width: 90px;
+          height: 90px;
+          border-radius: 50%;
+          background-color: #4466c9;
+          -webkit-transform: translate(-50%,-50%);
+          transform: translate(-50%,-50%);
+          z-index: -1;
+        }
+      }
+      &.rio {
+        bottom: -5%;
+        right: 5%;
+        color: #648cff;
+        &:before {
+          content: "";
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          width: 55px;
+          height: 55px;
+          border-radius: 50%;
+          background-color: #fcec64;
+          -webkit-transform: translate(-50%,-50%);
+          transform: translate(-50%,-50%);
+          z-index: -1;
+        }
+      }
+    }
+  }
+  @include md {
+    & span {
+      &.sunny {
+        left: 17%;
+        top: 55%;
+      }
+      &.nine {
+        top: 17%;
+        right: 20%;
+      }
+      &.london {
+        right: 5%;
+        top: 51%;
+      }
+      &.rio {
+        bottom: -5%;
+        right: 15%;
+      }
+    }
+  }
+}
+.main__wave {
+  display: none;
+}
+.main__down {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 24px;
 }

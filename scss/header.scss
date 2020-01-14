@@ -3,6 +3,13 @@ $background__color: #648cff;
 .header {
   position: absolute;
   width: 100%;
+  @include sm {
+    height: 85px;
+    background-color: $background__color;
+    &.active {
+      height: 228px;
+    }
+  }
   @include md {
     background-color: $background__color;
     width: 100%;
