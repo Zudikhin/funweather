@@ -202,6 +202,11 @@ a:hover {
     font-size: 18px;
   }
 }
+@media screen and (min-width: 992px) {
+  .header__menu ul li {
+    margin-right: 80px;
+  }
+}
 
 .header__icons {
   display: flex;
@@ -240,6 +245,12 @@ a:hover {
     margin-right: 30px;
   }
 }
+@media screen and (min-width: 992px) {
+  .header__icons a {
+    font-size: 24px;
+    margin-right: 40px;
+  }
+}
 
 .header__logo {
   font-size: 32px;
@@ -272,6 +283,7 @@ a:hover {
   position: relative;
   top: 84px;
   background-color: #648cff;
+  overflow: hidden;
 }
 .main.active {
   top: 328px;
@@ -305,6 +317,19 @@ a:hover {
   .main__content p {
     font-size: 24px;
     text-align: left;
+    margin-top: 34px;
+  }
+}
+@media screen and (min-width: 992px) {
+  .main__content {
+    margin-top: 150px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .main__content {
+    position: relative;
+    z-index: 1;
+    margin-top: 250px;
   }
 }
 
@@ -346,6 +371,7 @@ a:hover {
 @media screen and (min-width: 992px) {
   .main__btns {
     justify-content: flex-start;
+    margin: 55px auto;
   }
   .main__btns button:hover {
     background-color: #fc6a42;
@@ -464,9 +490,71 @@ a:hover {
     right: 15%;
   }
 }
+@media screen and (min-width: 992px) {
+  .main__mobile {
+    margin-top: 50px;
+  }
+  .main__mobile span.sunny {
+    left: 5%;
+    top: 55%;
+  }
+  .main__mobile span.nine {
+    top: 17%;
+    right: 5%;
+  }
+  .main__mobile span.london {
+    right: -12%;
+    top: 51%;
+  }
+  .main__mobile span.rio {
+    bottom: -5%;
+    right: 0%;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .main__mobile {
+    margin-top: 150px;
+    position: relative;
+    z-index: 1;
+  }
+  .main__mobile span.sunny {
+    left: 8%;
+    top: 55%;
+  }
+  .main__mobile span.nine {
+    top: 17%;
+    right: 12%;
+  }
+  .main__mobile span.london {
+    right: -7%;
+    top: 51%;
+  }
+  .main__mobile span.rio {
+    bottom: -5%;
+    right: 5%;
+  }
+}
 
 .main__wave {
   display: none;
+}
+@media screen and (min-width: 1200px) {
+  .main__wave {
+    display: block;
+  }
+  .main__wave img {
+    position: absolute;
+    z-index: 0;
+    bottom: -400;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
+  .main__wave img.first {
+    left: 50%;
+  }
+  .main__wave img.second {
+    left: 50%;
+  }
 }
 
 .main__down {
@@ -475,6 +563,15 @@ a:hover {
   justify-content: center;
   align-items: center;
   margin-top: 24px;
+}
+@media screen and (min-width: 1200px) {
+  .main__down {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

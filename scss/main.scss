@@ -2,6 +2,7 @@
   position: relative;
   top: $header__height - 1px;
   background-color: $background__color;
+  overflow: hidden;
   &.active {
     top: 328px;
   }
@@ -26,12 +27,21 @@
     color: white;
     text-align: center;
     font-size: 18px;
-    font-family: 'Ubuntu-Regular';
+    font-family: "Ubuntu-Regular";
     margin-top: 16px;
     @include lg {
       font-size: 24px;
       text-align: left;
+      margin-top: 34px;
     }
+  }
+  @include lg {
+    margin-top: 150px;
+  }
+  @include xl {
+    position: relative;
+    z-index: 1;
+    margin-top: 250px;
   }
 }
 .main__btns {
@@ -68,6 +78,7 @@
   }
   @include lg {
     justify-content: flex-start;
+    margin: 55px auto;
     & button {
       &:hover {
         background-color: #fc6a42;
@@ -91,8 +102,8 @@
       position: absolute;
       font-size: 18px;
       color: white;
-      -webkit-transform: translate(-50%,-50%);
-      transform: translate(-50%,-50%);
+      -webkit-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
       font-family: "Ubuntu-Bold";
       z-index: 1;
       text-transform: uppercase;
@@ -108,8 +119,8 @@
           height: 90px;
           border-radius: 50%;
           background-color: #fc6a42;
-          -webkit-transform: translate(-50%,-50%);
-          transform: translate(-50%,-50%);
+          -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
           z-index: -1;
         }
       }
@@ -126,8 +137,8 @@
           height: 58px;
           border-radius: 50%;
           background-color: white;
-          -webkit-transform: translate(-50%,-50%);
-          transform: translate(-50%,-50%);
+          -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
           z-index: -1;
         }
       }
@@ -143,8 +154,8 @@
           height: 90px;
           border-radius: 50%;
           background-color: #4466c9;
-          -webkit-transform: translate(-50%,-50%);
-          transform: translate(-50%,-50%);
+          -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
           z-index: -1;
         }
       }
@@ -161,8 +172,8 @@
           height: 55px;
           border-radius: 50%;
           background-color: #fcec64;
-          -webkit-transform: translate(-50%,-50%);
-          transform: translate(-50%,-50%);
+          -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
           z-index: -1;
         }
       }
@@ -188,9 +199,69 @@
       }
     }
   }
+  @include lg {
+    margin-top: 50px;
+    & span {
+      &.sunny {
+        left: 5%;
+        top: 55%;
+      }
+      &.nine {
+        top: 17%;
+        right: 5%;
+      }
+      &.london {
+        right: -12%;
+        top: 51%;
+      }
+      &.rio {
+        bottom: -5%;
+        right: 0%;
+      }
+    }
+  }
+  @include xl {
+    margin-top: 150px;
+    position: relative;
+    z-index: 1;
+    & span {
+      &.sunny {
+        left: 8%;
+        top: 55%;
+      }
+      &.nine {
+        top: 17%;
+        right: 12%;
+      }
+      &.london {
+        right: -7%;
+        top: 51%;
+      }
+      &.rio {
+        bottom: -5%;
+        right: 5%;
+      }
+    }
+  }
 }
 .main__wave {
   display: none;
+  @include xl {
+    display: block;
+    & img {
+      position: absolute;
+      z-index: 0;
+      bottom: -400px;
+      -webkit-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+      &.first {
+        left: 50%;
+      }
+      &.second {
+        left: 50%;
+      }
+    }
+  }
 }
 .main__down {
   display: flex;
@@ -198,4 +269,11 @@
   justify-content: center;
   align-items: center;
   margin-top: 24px;
+  @include xl {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
 }

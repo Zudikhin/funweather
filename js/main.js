@@ -24,3 +24,10 @@ function openBurger() {
     header.classList.add("active");
   }
 }
+
+let radius = document.querySelectorAll(".radius");
+for (let i = 0; i < radius.length; i++) {
+  let item = radius[i];
+  item.classList.add("")
+  console.log(item);
+}

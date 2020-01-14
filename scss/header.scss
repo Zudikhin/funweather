@@ -129,6 +129,11 @@ $background__color: #648cff;
       font-size: 18px;
     }
   }
+  @include lg {
+    & ul li {
+      margin-right: 80px;
+    }
+  }
 }
 .header__icons {
   display: flex;
@@ -162,6 +167,12 @@ $background__color: #648cff;
     & a {
       font-size: 24px;
       margin-right: 30px;
+    }
+  }
+  @include lg {
+    & a {
+      font-size: 24px;
+      margin-right: 40px;
     }
   }
 }
