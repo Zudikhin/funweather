@@ -131,6 +131,11 @@ $background__color: #648cff;
   }
   @include lg {
     & ul li {
+      margin-right: 30px;
+    }
+  }
+  @include xl {
+    & ul li {
       margin-right: 80px;
     }
   }

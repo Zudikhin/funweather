@@ -1,0 +1,80 @@
+.features {
+	margin-top: 124px;
+	@include lg {
+		margin-top: 154px;
+  	}
+  	@include xl {
+		margin-top: 204px;
+  	}
+}
+.features__title {
+	@include title;
+	font-size: 30px;
+	@include lg {
+		font-size: 36px;
+	}
+}
+.features__tagline {
+	@include tagline;
+	font-size: 18px;
+	@include lg {
+		font-size: 22px;
+	}
+	@include xl {
+		margin-top: 10px;
+	}
+}
+.features__item {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin-top: 30px;
+	.features__text {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+	h3 {
+		font-family: "Ubuntu-Bold";
+		font-size: 16px;
+		color: black;
+		margin-top: 20px;
+	}
+	p {
+		font-size: 14px;
+		color: #aeaeae;
+		font-family: "Ubuntu-Regular";
+		margin-top: 10px;
+		text-align: center;
+	}
+	@include sm {
+		flex-direction: row;
+		align-items: flex-start;
+		.features__text {
+			justify-content: flex-start;
+			align-items: flex-start;
+			margin-left: 20px;
+		}
+		h3 {
+			margin-top: 0px;
+		}
+		p {
+			text-align: left;
+			width: 260px;
+		}
+	}
+	@include lg {
+		margin-top: 50px;
+		h3 {
+			font-size: 22px;
+		}
+		p {
+			font-size: 16px;
+		}
+	}
+	@include xl {
+		margin-top: 100px;
+	}
+}

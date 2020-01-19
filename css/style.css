@@ -25,6 +25,10 @@ body {
   padding: 0;
 }
 
+body {
+  overflow-x: hidden;
+}
+
 input {
   margin: 0;
   padding: 0;
@@ -204,6 +208,11 @@ a:hover {
 }
 @media screen and (min-width: 992px) {
   .header__menu ul li {
+    margin-right: 30px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .header__menu ul li {
     margin-right: 80px;
   }
 }
@@ -293,6 +302,14 @@ a:hover {
     top: 228px;
   }
 }
+@media screen and (min-width: 1200px) {
+  .main {
+    border-radius: 0% 0% 45% 45%;
+    width: 200%;
+    left: -50%;
+    padding-bottom: 150px;
+  }
+}
 
 .main__content h2 {
   color: white;
@@ -378,6 +395,23 @@ a:hover {
   }
 }
 
+@keyframes mobile {
+  0% {
+    transform: translateY(0px);
+  }
+  25% {
+    transform: translateY(6px);
+  }
+  50% {
+    transform: translateY(0px);
+  }
+  75% {
+    transform: translateY(-6px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
 .main__mobile {
   margin-top: 10px;
   display: flex;
@@ -400,6 +434,10 @@ a:hover {
     font-family: "Ubuntu-Bold";
     z-index: 1;
     text-transform: uppercase;
+    animation-duration: 2s;
+    animation-name: mobile;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
   }
   .main__mobile span.sunny {
     left: 5%;
@@ -437,7 +475,7 @@ a:hover {
     z-index: -1;
   }
   .main__mobile span.london {
-    right: -10%;
+    right: 0%;
     top: 51%;
   }
   .main__mobile span.london:before {
@@ -474,7 +512,7 @@ a:hover {
 }
 @media screen and (min-width: 768px) {
   .main__mobile span.sunny {
-    left: 17%;
+    left: 10%;
     top: 55%;
   }
   .main__mobile span.nine {
@@ -495,7 +533,7 @@ a:hover {
     margin-top: 50px;
   }
   .main__mobile span.sunny {
-    left: 5%;
+    left: 0%;
     top: 55%;
   }
   .main__mobile span.nine {
@@ -503,7 +541,7 @@ a:hover {
     right: 5%;
   }
   .main__mobile span.london {
-    right: -12%;
+    right: -3%;
     top: 51%;
   }
   .main__mobile span.rio {
@@ -518,7 +556,7 @@ a:hover {
     z-index: 1;
   }
   .main__mobile span.sunny {
-    left: 8%;
+    left: 4%;
     top: 55%;
   }
   .main__mobile span.nine {
@@ -535,6 +573,40 @@ a:hover {
   }
 }
 
+@keyframes waveFirst {
+  0% {
+    left: 50%;
+  }
+  25% {
+    left: 52%;
+  }
+  50% {
+    left: 50%;
+  }
+  75% {
+    left: 48%;
+  }
+  100% {
+    left: 50%;
+  }
+}
+@keyframes waveSecond {
+  0% {
+    left: 50%;
+  }
+  25% {
+    left: 48%;
+  }
+  50% {
+    left: 50%;
+  }
+  75% {
+    left: 52%;
+  }
+  100% {
+    left: 50%;
+  }
+}
 .main__wave {
   display: none;
 }
@@ -545,15 +617,21 @@ a:hover {
   .main__wave img {
     position: absolute;
     z-index: 0;
-    bottom: -400;
+    bottom: -400px;
     -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
   }
   .main__wave img.first {
-    left: 50%;
+    animation-duration: 3s;
+    animation-name: waveFirst;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
   }
   .main__wave img.second {
-    left: 50%;
+    animation-duration: 3s;
+    animation-name: waveSecond;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
   }
 }
 
@@ -568,9 +646,165 @@ a:hover {
   .main__down {
     position: absolute;
     left: 50%;
-    bottom: 0;
+    bottom: -150px;
     -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
+  }
+}
+
+.features {
+  margin-top: 124px;
+}
+@media screen and (min-width: 992px) {
+  .features {
+    margin-top: 154px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .features {
+    margin-top: 204px;
+  }
+}
+
+.features__title {
+  font-family: "Ubuntu-Bold";
+  color: #648cff;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 30px;
+}
+@media screen and (min-width: 992px) {
+  .features__title {
+    font-size: 36px;
+  }
+}
+
+.features__tagline {
+  font-family: "Ubuntu-Regular";
+  color: #999999;
+  text-align: center;
+  font-size: 18px;
+}
+@media screen and (min-width: 992px) {
+  .features__tagline {
+    font-size: 22px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .features__tagline {
+    margin-top: 10px;
+  }
+}
+
+.features__item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}
+.features__item .features__text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.features__item h3 {
+  font-family: "Ubuntu-Bold";
+  font-size: 16px;
+  color: black;
+  margin-top: 20px;
+}
+.features__item p {
+  font-size: 14px;
+  color: #aeaeae;
+  font-family: "Ubuntu-Regular";
+  margin-top: 10px;
+  text-align: center;
+}
+@media screen and (min-width: 576px) {
+  .features__item {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+  .features__item .features__text {
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-left: 20px;
+  }
+  .features__item h3 {
+    margin-top: 0px;
+  }
+  .features__item p {
+    text-align: left;
+    width: 260px;
+  }
+}
+@media screen and (min-width: 992px) {
+  .features__item {
+    margin-top: 50px;
+  }
+  .features__item h3 {
+    font-size: 22px;
+  }
+  .features__item p {
+    font-size: 16px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .features__item {
+    margin-top: 100px;
+  }
+}
+
+.widgets {
+  margin-top: 50px;
+}
+
+.slider .item {
+  width: 100%;
+  display: none;
+}
+.slider .item.active {
+  display: block;
+}
+.slider .item img {
+  width: 100%;
+}
+@media screen and (min-width: 1200px) {
+  .slider {
+    display: flex;
+    justify-content: center;
+  }
+  .slider .item {
+    display: block;
+    width: 316px;
+  }
+  .slider .item.active {
+    width: 370px;
+  }
+}
+
+.slider {
+  position: relative;
+}
+.slider button {
+  position: absolute;
+  background-color: inherit;
+  border: none;
+  display: none;
+}
+.slider button#prev {
+  left: 0;
+  top: 0;
+}
+.slider button#next {
+  right: 0;
+  top: 0;
+}
+@media screen and (min-width: 1200px) {
+  .slider button {
+    display: block;
   }
 }
 

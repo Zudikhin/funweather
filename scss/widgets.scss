@@ -1,0 +1,48 @@
+.widgets {
+	margin-top: 50px;
+}
+.slider {
+	.item {
+		width: 100%;
+		display: none;
+		&.active {
+			display: block;
+		}
+		img {
+			width: 100%;
+		}
+	}
+	@include xl {
+		display: flex;
+		justify-content: center;
+		.item {
+			display: block;
+			width: 316px;
+			&.active {
+				width: 370px;
+			}
+		}
+	}
+}
+.slider {
+	position: relative;
+	button {
+		position: absolute;
+		background-color: inherit;
+		border: none;
+		display: none;
+		&#prev {
+			left: 0;
+			top: 0;
+		}
+		&#next {
+			right: 0;
+			top: 0;
+		}
+	}
+	@include xl {
+		button {
+			display: block;
+		}
+	}
+}

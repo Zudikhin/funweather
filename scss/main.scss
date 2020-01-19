@@ -11,6 +11,12 @@
       top: 228px;
     }
   }
+  @include xl {
+    border-radius: 0% 0% 45% 45%;
+    width: 200%;
+    left: -50%;
+    padding-bottom: 150px;
+  }
 }
 .main__content {
   & h2 {
@@ -86,6 +92,23 @@
     }
   }
 }
+@keyframes mobile {
+  0%   {
+    transform:translateY(0px);
+  }
+  25%  {
+    transform:translateY(6px);
+  }
+  50% {
+    transform:translateY(0px);
+  }
+  75%  {
+    transform:translateY(-6px);
+  }
+  100% {
+    transform:translateY(0px);
+  }
+}
 .main__mobile {
   margin-top: 10px;
   display: flex;
@@ -107,6 +130,10 @@
       font-family: "Ubuntu-Bold";
       z-index: 1;
       text-transform: uppercase;
+      animation-duration: 2s;
+      animation-name: mobile;
+      animation-iteration-count: infinite;
+      animation-timing-function: linear;
       &.sunny {
         left: 5%;
         top: 55%;
@@ -143,7 +170,7 @@
         }
       }
       &.london {
-        right: -10%;
+        right: 0%;
         top: 51%;
         &:before {
           content: "";
@@ -182,7 +209,7 @@
   @include md {
     & span {
       &.sunny {
-        left: 17%;
+        left: 10%;
         top: 55%;
       }
       &.nine {
@@ -203,7 +230,7 @@
     margin-top: 50px;
     & span {
       &.sunny {
-        left: 5%;
+        left: 0%;
         top: 55%;
       }
       &.nine {
@@ -211,7 +238,7 @@
         right: 5%;
       }
       &.london {
-        right: -12%;
+        right: -3%;
         top: 51%;
       }
       &.rio {
@@ -226,7 +253,7 @@
     z-index: 1;
     & span {
       &.sunny {
-        left: 8%;
+        left: 4%;
         top: 55%;
       }
       &.nine {
@@ -244,6 +271,42 @@
     }
   }
 }
+@keyframes waveFirst {
+  0%   {
+    left: 50%;
+  }
+  25%  {
+    left: 52%;
+  }
+  50% {
+    left: 50%;
+  }
+  75%  {
+    left: 48%;
+  }
+  100% {
+    left: 50%;
+  }
+}
+
+@keyframes waveSecond {
+  0%   {
+    left: 50%;
+  }
+  25%  {
+    left: 48%;
+  }
+  50% {
+    left: 50%;
+  }
+  75%  {
+    left: 52%;
+  }
+  100% {
+    left: 50%;
+  }
+}
+
 .main__wave {
   display: none;
   @include xl {
@@ -255,10 +318,16 @@
       -webkit-transform: translate(-50%, -50%);
       transform: translate(-50%, -50%);
       &.first {
-        left: 50%;
+        animation-duration: 3s;
+        animation-name: waveFirst;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
       }
       &.second {
-        left: 50%;
+        animation-duration: 3s;
+        animation-name: waveSecond;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
       }
     }
   }
@@ -272,7 +341,7 @@
   @include xl {
     position: absolute;
     left: 50%;
-    bottom: 0;
+    bottom: -150px;
     -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
   }

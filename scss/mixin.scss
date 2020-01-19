@@ -26,3 +26,17 @@ $screen-xl: 1200px;
     @content;
   }
 }
+
+@mixin title {
+  font-family: "Ubuntu-Bold";
+  color: #648cff;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+@mixin tagline {
+  font-family: "Ubuntu-Regular";
+  color: #999999;
+  text-align: center;
+}
+
