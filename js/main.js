@@ -56,8 +56,8 @@ prev.addEventListener("click", () => {
 });
 
 for (let i = 0; i < item.length; i++) {
-    item[i].addEventListener("touchstart", startTouch);
-    item[i].addEventListener("touchmove", moveTouch);
+    item[i].addEventListener("touchstart", startTouch, false);
+    item[i].addEventListener("touchmove", moveTouch, false);
 }
 
 let initialX = null;
@@ -83,10 +83,12 @@ function moveTouch(e) {
     let currentX = e.touches[0].clientX;
     let diffY = initialY - currentY;
     let diffX = initialX - currentX;
+    console.log(diffX);
+    console.log(diffY);
     if (Math.abs(diffX) > Math.abs(diffY)) {
-        if (diffX > 0) {
+        if (diffX > 10) {
             moveToSlide(currentSlide + 1);
-        } else {
+        } else if(diffX < -10) {
             moveToSlide(currentSlide - 1);
         }
     }
