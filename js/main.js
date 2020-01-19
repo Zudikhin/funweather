@@ -61,26 +61,38 @@ for (let i = 0; i < item.length; i++) {
 }
 
 let initialX = null;
+let initialY = null;
 
 let currentSlide = 1;
 
 function startTouch(e) {
     initialX = e.touches[0].clientX;
+    initialY = e.touches[0].clientY;
 }
 
 function moveTouch(e) {
-  if (initialX === null) {
-    return;
-  }
-  let currentX = e.touches[0].clientX;
-  let diffX = initialX - currentX;
-  if (diffX > 0) {
-    moveToSlide(currentSlide + 1);
-  } else {
-    moveToSlide(currentSlide - 1);
-  }
-  initialX = null;
-  e.preventDefault();
+
+    if (initialX === null) {
+        return;
+    }
+    if (initialY === null) {
+        return;
+    }
+
+    let currentY = e.touches[0].clientY;
+    let currentX = e.touches[0].clientX;
+    let diffY = initialY - currentY;
+    let diffX = initialX - currentX;
+    if (Math.abs(diffX) > Math.abs(diffY)) {
+        if (diffX > 0) {
+            moveToSlide(currentSlide + 1);
+        } else {
+            moveToSlide(currentSlide - 1);
+        }
+    }
+    initialX = null;
+    initialY = null;
+    e.preventDefault();
 };
 
 function moveToSlide(n) {
@@ -89,6 +101,61 @@ function moveToSlide(n) {
     item[currentSlide].className = 'item active';
 }
 
+/*let slider = document.querySelectorAll('.item');
+
+let slide = document.querySelector('.slider');
+let item = document.querySelectorAll('.item');
+let slideCount = slide.length;
+let currentSlide = 0;
+
+item[0].classList.add('active');
+
+for(let i = 0; i < item.length; i++) {
+    item[i].addEventListener("touchstart", startTouch, false);
+}
+
+let initialX = null;
+let initialY = null;
+function startTouch(e) {
+  initialX = e.touches[0].clientX;
+  initialY = e.touches[0].clientY;
+};
+function moveTouch(e) {
+    if (initialX === null) {
+        return;
+    }
+    if (initialY === null) {
+        return;
+    }
+}*/
+
+
+/*function moveTouch(e) {
+  if (initialX === null) {
+    return;
+  }
+  if (initialY === null) {
+    return;
+  }
+  var currentX = e.touches[0].clientX;
+  var currentY = e.touches[0].clientY;
+  var diffX = initialX - currentX;
+  var diffY = initialY - currentY;
+  if (Math.abs(diffX) > Math.abs(diffY)) {
+    if (diffX > 0) {
+// swiped left
+moveToSlide(currentSlide+1);
+} else {
+// swiped right
+moveToSlide(currentSlide+-1);
+}
+}
+initialX = null;
+initialY = null;
+e.preventDefault();
+};
+
+item.addEventListener("touchmove", moveTouch, false);*/
 
 
 
