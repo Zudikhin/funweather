@@ -760,10 +760,18 @@ a:hover {
 .widgets {
   margin-top: 50px;
 }
+@media screen and (min-width: 1200px) {
+  .widgets {
+    margin-top: 200px;
+  }
+}
 
 .slider .item {
   width: 100%;
   display: none;
+  -webkit-box-shadow: 0px 15px 37px -12px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 15px 37px -12px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 15px 37px -12px rgba(0, 0, 0, 0.75);
 }
 .slider .item.active {
   display: block;
@@ -771,22 +779,47 @@ a:hover {
 .slider .item img {
   width: 100%;
 }
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 576px) {
+  .slider .item {
+    width: 316px;
+    margin: 0 auto;
+  }
+}
+@media screen and (min-width: 992px) {
   .slider {
     display: flex;
     justify-content: center;
   }
   .slider .item {
     display: block;
+    position: absolute;
     width: 316px;
   }
   .slider .item.active {
     width: 370px;
+    z-index: 999;
+  }
+  .slider .item:first-child {
+    left: 100px;
+    top: 50px;
+  }
+  .slider .item:nth-child(3) {
+    right: 100px;
+    top: 50px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .slider .item:first-child {
+    left: 155px;
+  }
+  .slider .item:nth-child(3) {
+    right: 155px;
   }
 }
 
 .slider {
   position: relative;
+  margin-top: 30px;
 }
 .slider button {
   position: absolute;
@@ -802,10 +835,59 @@ a:hover {
   right: 0;
   top: 0;
 }
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 768px) {
   .slider button {
     display: block;
   }
+  .slider button#prev {
+    top: 50%;
+  }
+  .slider button#next {
+    top: 50%;
+  }
+}
+@media screen and (min-width: 992px) {
+  .slider {
+    margin-top: 50px;
+  }
+  .slider button#prev {
+    top: 310px;
+  }
+  .slider button#next {
+    top: 310px;
+  }
+}
+
+.slider__bullets {
+  position: absolute;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  left: 50%;
+  bottom: -70px;
+}
+.slider__bullets > a {
+  display: inline-block;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0.5;
+  transition: 200ms ease;
+  width: 18px;
+  margin: 0 10px;
+  height: 18px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 9999;
+}
+.slider__bullets > a.active {
+  opacity: 1;
+}
+@media screen and (min-width: 768px) {
+  .slider__bullets {
+    display: none;
+  }
+}
+
+.screenshots {
+  margin-top: 100px;
 }
 
 /*# sourceMappingURL=style.css.map */

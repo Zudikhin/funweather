@@ -1,10 +1,16 @@
 .widgets {
 	margin-top: 50px;
+	@include xl {
+		margin-top: 200px;
+	}
 }
 .slider {
 	.item {
 		width: 100%;
 		display: none;
+		-webkit-box-shadow: 0px 15px 37px -12px rgba(0,0,0,0.75);
+		-moz-box-shadow: 0px 15px 37px -12px rgba(0,0,0,0.75);
+		box-shadow: 0px 15px 37px -12px rgba(0,0,0,0.75);
 		&.active {
 			display: block;
 		}
@@ -12,20 +18,47 @@
 			width: 100%;
 		}
 	}
-	@include xl {
+	@include sm {
+		.item {
+			width: 316px;
+			margin: 0 auto;
+		}
+	}
+	@include lg {
 		display: flex;
 		justify-content: center;
 		.item {
 			display: block;
+			position: absolute;
 			width: 316px;
 			&.active {
 				width: 370px;
+				z-index: 999;
+			}
+			&:first-child {
+				left: 100px;
+				top: 50px;
+			}
+			&:nth-child(3) {
+				right: 100px;
+				top: 50px;
+			}
+		}
+	}
+	@include xl {
+		.item {
+			&:first-child {
+				left: 155px;
+			}
+			&:nth-child(3) {
+				right: 155px;
 			}
 		}
 	}
 }
 .slider {
 	position: relative;
+	margin-top: 30px;
 	button {
 		position: absolute;
 		background-color: inherit;
@@ -40,9 +73,51 @@
 			top: 0;
 		}
 	}
-	@include xl {
+	@include md {
 		button {
 			display: block;
+    		&#prev {
+    			top: 50%;
+    		}
+    		&#next {
+    			top: 50%;
+    		}
 		}
+	}
+	@include lg {
+		margin-top: 50px;
+		button {
+			&#prev {
+				top: 310px;
+			}
+			&#next {
+				top: 310px;
+			}
+		}
+	}
+}
+.slider__bullets {
+	position: absolute;
+	-webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    left: 50%;
+    bottom: -70px;
+	&>a {
+		display: inline-block;
+	    background-color: rgba(0,0,0,.5);
+	    opacity: .5;
+	    transition: 200ms ease;
+	    width: 18px;
+	    margin: 0 10px;
+	    height: 18px;
+	    border-radius: 50%;
+	    cursor: pointer;
+	    z-index: 9999;
+	    &.active {
+	    	opacity: 1;
+	    }
+	}
+	@include md {
+		display: none;
 	}
 }
