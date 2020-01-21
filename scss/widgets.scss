@@ -1,3 +1,23 @@
+@keyframes imgopacity {
+	from {
+	 	transform: rotateY(0deg);
+	 	opacity: 0;
+	}
+	to {
+		transform: rotateY(360deg);
+		opacity: 1;
+	}
+ }
+ @keyframes fakeopacity {
+	 from {
+	 	transform: rotateY(0deg);
+	 	opacity: 0;
+	}
+	to {
+		transform: rotateY(360deg);
+		opacity: 1;
+	}
+ }
 .widgets {
 	margin-top: 50px;
 	@include xl {
@@ -42,6 +62,12 @@
 			&:nth-child(3) {
 				right: 100px;
 				top: 50px;
+			}
+			&.animation {
+				animation: imgopacity .3s linear;
+			}
+			&.fakeanimation {
+				animation: fakeopacity .3s linear;
 			}
 		}
 	}

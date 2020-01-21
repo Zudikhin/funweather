@@ -1,0 +1,48 @@
+.download {
+	background-color: #648cff;
+	margin-top: 50px;
+}
+.download__mobile {
+	display: none;
+	@include lg {
+		display: block;
+		position: relative;
+		img {
+			position: absolute;
+		}
+	}
+}
+.download__item {
+	margin-top: 50px;
+	h2 {
+		text-align: center;
+		font-family: "Ubuntu-Bold";
+    	text-transform: uppercase;
+    	font-size: 30px;
+    	color: white;
+	}
+	p {
+		text-align: center;
+		color: white;
+		font-size: 18px;
+		margin-top: 40px;
+	}
+}
+.download__btns {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	a {
+		margin-top: 20px;
+	}
+	@include sm {
+		flex-direction: row;
+		a {
+			margin-left: 20px;
+			&:first-child {
+				margin-left: 0px;
+			}
+		}
+	}
+}

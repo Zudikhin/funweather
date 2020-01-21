@@ -31,7 +31,7 @@ let next = document.querySelector('#next');
 
 next.addEventListener("click", () => {
     let lastImgItem = item[item.length - 1].childNodes[0];
-    for (let i = 0; i < item.length; i++) { 
+    for (let i = 0; i < item.length; i++) {
         if (i < item.length - 1) {
             let images = item[i].childNodes[0];
             item[i].childNodes[0].remove();
@@ -40,6 +40,20 @@ next.addEventListener("click", () => {
             item[0].append(lastImgItem);
         }
     }
+
+    item.forEach(function callback(element, index) {
+
+        if (item[index].classList.contains('animation')) {
+            item[index].classList.remove('animation');
+            item[index].classList.add('fakeanimation');
+        } else if(item[index].classList.contains('fakeanimation')) {
+            item[index].classList.remove('fakeanimation');
+            item[index].classList.add('animation');
+        } else {
+            item[index].classList.add('animation');
+        }
+    });
+
 });
 
 prev.addEventListener("click", () => {
@@ -53,6 +67,20 @@ prev.addEventListener("click", () => {
             item[item.length - 1].append(firstImgItem);
         }
     }
+
+    item.forEach(function callback(element, index) {
+
+        if (item[index].classList.contains('animation')) {
+            item[index].classList.remove('animation');
+            item[index].classList.add('fakeanimation');
+        } else if(item[index].classList.contains('fakeanimation')) {
+            item[index].classList.remove('fakeanimation');
+            item[index].classList.add('animation');
+        } else {
+            item[index].classList.add('animation');
+        }
+    });
+
 });
 
 let sliderBullets = document.querySelector('.slider__bullets');

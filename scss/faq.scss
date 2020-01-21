@@ -1,0 +1,90 @@
+.faq {
+  margin-top: 50px;
+  @include xl {
+    margin-top: 120px;
+  }
+}
+.faq__item {
+  position: relative;
+  margin-top: 75px;
+  blockquote:before,
+  blockquote:after {
+    position: absolute;
+    quotes: "\201c" "\201d";
+    font-size: 100px;
+    color: #648cff;
+    font-family: 'Ubuntu-Regular';
+  }
+  blockquote:before {
+    content: open-quote;
+    left: 25px;
+    top: -70px;
+  }
+  blockquote:after {
+    content: close-quote;
+    right: 20px;
+    bottom: -100px;
+  }
+  p {
+    margin-left: 30px;
+    font-family: 'Ubuntu-Regular';
+    font-size: 20px;
+    color: #353854;
+  }
+  span {
+    margin-left: 30px;
+    font-family: 'Ubuntu-Regular';
+    font-size: 18px;
+    color: #353854;
+  }
+  @include sm {
+    blockquote:before {
+      left: 55px;
+      top: -70px;
+    }
+    blockquote:after {
+      right: 45px;
+      bottom: -100px;
+    }
+    p {
+      margin-left: 60px;
+    }
+    span {
+      margin-left: 60px;
+    }
+  }
+  @include md {
+    blockquote:before {
+      left: 25px;
+    }
+    blockquote:after {
+      right: 25px;
+    }
+    p {
+      margin-left: 30px;
+    }
+    span {
+      margin-left: 30px;
+    }
+  }
+  @include xl {
+    margin-top: 125px;
+    margin-bottom: 100px;
+    blockquote:before,
+    blockquote:after {
+      font-size: 140px;
+    }
+    blockquote:before {
+      top: -100px;
+    }
+    blockquote:after {
+      bottom: -150px;
+    }
+    p {
+      font-size: 24px;
+    }
+    span {
+      font-size: 18px;
+    }
+  }
+}
