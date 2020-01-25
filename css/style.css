@@ -1214,6 +1214,14 @@ a:hover {
 .download {
   background-color: #648cff;
   margin-top: 50px;
+  padding-bottom: 50px;
+}
+@media screen and (min-width: 992px) {
+  .download {
+    padding-top: 60px;
+    overflow-y: hidden;
+    padding-bottom: 100px;
+  }
 }
 
 .download__mobile {
@@ -1227,6 +1235,28 @@ a:hover {
   .download__mobile img {
     position: absolute;
   }
+  .download__mobile img:first-child {
+    right: 0;
+    top: 70px;
+  }
+  .download__mobile img:nth-child(2) {
+    left: 0;
+    top: 70px;
+  }
+  .download__mobile img:nth-child(3) {
+    left: 80px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .download__mobile img:first-child {
+    right: -20px;
+  }
+  .download__mobile img:nth-child(2) {
+    left: -56px;
+  }
+  .download__mobile img:nth-child(3) {
+    left: 120px;
+  }
 }
 
 .download__item {
@@ -1239,11 +1269,26 @@ a:hover {
   font-size: 30px;
   color: white;
 }
+@media screen and (min-width: 992px) {
+  .download__item h2 {
+    text-align: left;
+  }
+}
 .download__item p {
   text-align: center;
   color: white;
   font-size: 18px;
   margin-top: 40px;
+}
+@media screen and (min-width: 992px) {
+  .download__item p {
+    text-align: left;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .download__item p {
+    width: 360px;
+  }
 }
 
 .download__btns {
@@ -1264,6 +1309,175 @@ a:hover {
   }
   .download__btns a:first-child {
     margin-left: 0px;
+  }
+}
+@media screen and (min-width: 992px) {
+  .download__btns {
+    justify-content: flex-start;
+  }
+}
+
+.footer {
+  background-color: #353854;
+  padding-top: 50px;
+}
+.footer hr {
+  border-top: 1px solid #434769;
+}
+@media screen and (min-width: 992px) {
+  .footer hr {
+    margin-top: 40px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .footer hr {
+    margin-top: 90px;
+  }
+}
+
+.footer__nav {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+@media screen and (min-width: 576px) {
+  .footer__nav {
+    justify-content: space-around;
+  }
+}
+@media screen and (min-width: 768px) {
+  .footer__nav {
+    justify-content: space-between;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .footer__nav {
+    margin-top: 40px;
+  }
+}
+
+.footer__menu {
+  display: flex;
+  flex-direction: row;
+  order: 3;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-top: 20px;
+}
+.footer__menu li {
+  margin-left: 10px;
+}
+.footer__menu li:first-child {
+  margin-left: 0px;
+}
+.footer__menu li a {
+  font-family: "Ubuntu-Regular";
+  font-size: 16px;
+  color: #b5b5c8;
+}
+.footer__menu li a:hover {
+  color: white;
+}
+@media screen and (min-width: 576px) {
+  .footer__menu {
+    width: auto;
+  }
+  .footer__menu li {
+    margin-left: 48px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .footer__menu {
+    order: 2;
+    margin-top: 0px;
+  }
+  .footer__menu li {
+    margin-left: 20px;
+  }
+}
+@media screen and (min-width: 992px) {
+  .footer__menu li {
+    margin-left: 78px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .footer__menu li a {
+    font-size: 18px;
+  }
+}
+
+.footer__social {
+  display: flex;
+  flex-direction: row;
+  order: 2;
+}
+.footer__social li {
+  margin-left: 20px;
+}
+.footer__social li:first-child {
+  margin-left: 0px;
+}
+.footer__social li a {
+  color: white;
+  font-size: 20px;
+}
+@media screen and (min-width: 992px) {
+  .footer__social li {
+    margin-left: 40px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .footer__social li a {
+    font-size: 24px;
+  }
+}
+
+.footer__logo {
+  font-size: 24px;
+  font-family: "Ubuntu-Bold";
+  color: #648cff;
+  text-transform: uppercase;
+}
+.footer__logo span {
+  color: #fc6a42;
+  margin-right: 8px;
+}
+
+.footer__info {
+  color: #565b87;
+  font-size: 16px;
+  font-family: "Ubuntu-Regular";
+  text-align: center;
+}
+@media screen and (min-width: 768px) {
+  .footer__info {
+    text-align: right;
+    padding-bottom: 50px;
+  }
+}
+@media screen and (min-width: 992px) {
+  .footer__info {
+    margin-top: 40px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .footer__info {
+    padding-bottom: 70px;
+  }
+}
+
+.footer__top {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@media screen and (min-width: 768px) {
+  .footer__top {
+    position: absolute;
+    right: 0;
+    bottom: 0;
   }
 }
 

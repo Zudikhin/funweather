@@ -1,0 +1,142 @@
+.footer {
+	background-color: #353854;
+	padding-top: 50px;
+	hr {
+		border-top: 1px solid #434769;
+	}
+	@include lg {
+		hr {
+			margin-top: 40px;
+		}
+	}
+	@include xl {
+		hr {
+			margin-top: 90px;
+		}
+	}
+}
+.footer__nav {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	@include sm {
+		justify-content: space-around;
+	}
+	@include md {
+		justify-content: space-between;
+	}
+	@include xl {
+		margin-top: 40px;
+	}
+}
+.footer__menu {
+	display: flex;
+	flex-direction: row;
+	order: 3;
+	justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-top: 20px;
+	& li {
+		margin-left: 10px;
+		&:first-child {
+			margin-left: 0px;
+		}
+		& a {
+			font-family: "Ubuntu-Regular";
+			font-size: 16px;
+			color: #b5b5c8;
+			&:hover {
+				color: white;
+			}
+		}
+	}
+	@include sm {
+		width: auto;
+		& li {
+			margin-left: 48px;
+		}
+	}
+	@include md {
+		order: 2;
+		margin-top: 0px;
+		& li {
+			margin-left: 20px;
+		}
+	}
+	@include lg {
+		& li {
+			margin-left: 78px;
+		}
+	}
+	@include xl {
+		& li a {
+			font-size: 18px;
+		}
+	}
+}
+.footer__social {
+	display: flex;
+	flex-direction: row;
+	order: 2;
+	& li {
+		margin-left: 20px;
+		&:first-child {
+			margin-left: 0px;
+		}
+		& a {
+			color: white;
+			font-size: 20px;
+		}
+	}
+	@include lg {
+		& li {
+			margin-left: 40px;
+		}
+	}
+	@include xl {
+		& li a {
+			font-size: 24px;
+		}
+	}
+}
+.footer__logo {
+	font-size: 24px;
+    font-family: "Ubuntu-Bold";
+    color: #648cff;
+    text-transform: uppercase;
+    & span {
+		color: #fc6a42;
+		margin-right: 8px;
+    }
+}
+.footer__info {
+	color: #565b87;
+	font-size: 16px;
+	font-family: "Ubuntu-Regular";
+	text-align: center;
+	@include md {
+		text-align: right;
+		padding-bottom: 50px;
+	}
+	@include lg {
+		margin-top: 40px;
+	}
+	@include xl {
+		padding-bottom: 70px;
+	}
+}
+.footer__top {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	@include md {
+		position: absolute;
+		right: 0;
+		bottom: 0;
+	}
+}
+
+
+
