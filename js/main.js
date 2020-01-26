@@ -168,3 +168,44 @@ item.forEach(function(item) {
         currentBlock.appendChild(blockImg);
     });
 });
+
+
+let element = document.querySelector(".widgets");
+
+let btnDown = document.querySelector('.main__down');
+
+function handleButtonClickDown() {
+    element.scrollIntoView({ behavior: 'smooth', block: 'start'});
+}
+
+btnDown.addEventListener('click', handleButtonClickDown);
+
+
+let firstElement = document.querySelector(".header");
+
+let btnTop = document.querySelector('.footer__top');
+
+function handleButtonClickTop() {
+    firstElement.scrollIntoView({ behavior: 'smooth', block: 'start'});
+}
+
+btnTop.addEventListener('click', handleButtonClickTop);
+
+let links = document.querySelectorAll('a.scroll-to');
+for (let i = 0; i < links.length; i++) {
+    links[i].addEventListener('click', function(e){
+        e.preventDefault();
+        let id = links[i].getAttribute('href');
+        document.querySelector(id).scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+        });
+    });
+}
+
+
+
+
+
+
+

@@ -642,6 +642,7 @@ a:hover {
   justify-content: center;
   align-items: center;
   margin-top: 24px;
+  cursor: pointer;
 }
 @media screen and (min-width: 1200px) {
   .main__down {
@@ -1472,6 +1473,7 @@ a:hover {
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 }
 @media screen and (min-width: 768px) {
   .footer__top {
